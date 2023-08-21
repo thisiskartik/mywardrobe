@@ -24,7 +24,7 @@ def search_flipkart(query: str) -> str:
         for product in soup.find_all('div', recursive=False):
             link = product.find('a').attrs['href']
             id = link.split('?')[0].split('/')[-1]
-            title = product.find('a', {'class': 's1Q9rs'}).attrs['title']
+            title = product.find('div', {'class': '_2B099V'}).find('a').attrs['title']
             try:
                 price = product.find('div', {'class': '_30jeq3'}).text
             except:
